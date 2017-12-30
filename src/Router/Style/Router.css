@@ -1,0 +1,105 @@
+/* 导航 */
+nav {
+	height: 46px;
+	background-color: #010101;
+}
+.nav-wrapper {
+	width: 1162px;
+	height: 34px;
+	margin: 0 auto;
+	padding-left: 38px;
+	padding-top: 12px;
+	position: relative
+}
+.nav-list {
+	overflow: hidden;
+}
+.nav-list li {
+	float: left;
+	width: 58px;
+	margin-right: 77px;
+	padding-bottom: 11px;
+	text-align: center;
+}
+.nav-list li a {
+	color: #fff;
+	font-size: 14px;
+	transition: color 0.3s;
+}
+.nav-cn {
+	width: 24px;
+	height: 24px;
+	margin-right: 5px;
+	float: right;
+	background-image: url('../../Images/com_sprite.png');
+	background-repeat: no-repeat;
+	background-position: -3px -3px;
+}
+.nav-selected {
+	width: 58px;
+	height: 2px;
+	background-color: #77c111;
+	position: absolute;
+	top: 44px;
+	left: 0;
+	margin-left: 38px;
+	transition: left 0.5s;
+}
+.nav-icon {
+	display: none;
+}
+.header-icon {
+	color: #fff;
+	text-align: center;
+	letter-spacing: 3px;
+	width: 100px;
+	margin: 0 auto;
+	display: none;
+}
+
+
+/* 小屏幕 */
+@media (max-width: 1200px) {
+	nav {
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+	}
+	.nav-cn,
+	.nav-selected {
+		display: none;
+	}
+	.nav-wrapper {
+		width: 100%;
+		padding-left: 0;
+	}
+	.nav-icon {
+		display: block;
+		font-size: 20px;
+		line-height: 20px;
+		display: block;
+		float: right;
+		margin-right: 20px;
+		transition: color 0.3s;
+	}
+	.nav-list {
+		width: 70px;
+		height: 260px;
+		position: fixed;
+		top: 46px;
+		right: -71px;
+		background-color: #010101;
+		border-left: 1px solid #77c111;
+		border-bottom: 1px solid #77c111;
+		padding-top: 10px;
+		transition: right 0.3s;
+	}
+	.nav-list li {
+		width: 100%;
+	}
+	.header-icon {
+		display: block;
+	}
+}

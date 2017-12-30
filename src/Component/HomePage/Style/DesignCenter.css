@@ -1,0 +1,35 @@
+.index-design-bg {
+	width: 1920px;
+	margin-top: 94px;
+	padding: 100px 0 100px;
+	position: relative;
+	left: 50%;
+	margin-left: -960px;
+	background-position: center center;
+	background-image: url('../../../Images/index_design_bg.jpg');
+	background-repeat: no-repeat;
+}
+.index-design-video {
+	width: 1024px;
+	display: block;
+	margin: 0 auto;
+}
+
+
+/* 小屏幕 */
+@media (max-width: 1200px) {
+	.index-design-bg {
+		width: 100%;
+		padding: 5% 0 5%;
+		margin-top: 0;
+		left: 0;
+		margin-left: 0;
+		background-size: 200%;
+	}
+}
+/* 小屏幕 */
+@media (max-width: 1024px) {
+	.index-design-video {
+		width: 80%;
+	}
+}

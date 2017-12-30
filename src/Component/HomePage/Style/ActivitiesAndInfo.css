@@ -1,0 +1,74 @@
+.index-activities-content {
+	width: 100%;
+	margin-top: 94px;
+	background-color: #000;
+	overflow: hidden;
+}
+.index-activities-content a {
+	width: 50%;
+	position: relative;
+	overflow: hidden;
+}
+.index-activities-content img {
+	width: 100%;
+}
+.index-activities-content a:hover .index-activities-info {
+	bottom: 0;
+}
+.index-activities-info {
+	width: 100%;
+	height: 25%;
+	box-sizing: border-box;
+	padding: 20px 0 20px 40px;
+	background-color: rgba(0, 0, 0, .8);
+	position: absolute;
+	left: 0;
+	bottom: -25%;
+	color: #ccc;
+	transition: bottom .8s;
+}
+.index-activities-info b {
+	font-size: 24px;
+	font-weight: normal;
+}
+.index-activities-info span {
+	font-size: 14px;
+	line-height: 28px;
+	margin-top: 5px;
+	font-style: normal;
+	display: block;
+}
+.index-activities-info i {
+	font-size: 12px;
+	font-style: normal;
+	display: none;
+}
+
+/* 小屏幕 */
+@media (max-width: 1200px) {
+	.index-activities-content {
+		width: 100%;
+		margin-top: 0;
+		background-color: #fff;
+	}
+	.index-activities-content a {
+		width: 100%;
+		margin-top: 10px;
+		position: relative;
+		overflow: hidden;
+	}
+	.index-activities-info {
+		height: auto;
+		padding: 10px 10px 10px 20px;
+		bottom: 0;
+	}
+	.index-activities-info b {
+		font-size: 14px;
+	}
+	.index-activities-info span {
+		display: none;
+	}
+	.index-activities-info i {
+		display: block;
+	}
+}

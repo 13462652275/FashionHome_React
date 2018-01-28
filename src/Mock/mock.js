@@ -232,5 +232,96 @@ export default {
 				}, 500);
 			});
 		});
+
+		mock.onGet('/sortingList').reply(({ params }) => {
+			let list = [
+				'沙发',
+				'单人沙发',
+				'双人沙发',
+				'三人沙发',
+				'四人沙发',
+				'组合沙发',
+				'半圆沙发',
+				'转角沙发',
+				'美人榻'
+			];
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve([200, list]);
+				}, 500);
+			});
+		});
+
+		mock.onGet('/sofaData').reply(({ params }) => {
+			let data = [
+				{
+					title: '美人榻',
+					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
+					img: require('../Images/sofa_01.png'),
+					url: '###'
+				},
+				{
+					title: '三人沙发',
+					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
+					img: require('../Images/sofa_02.jpg'),
+					url: '###'
+				},
+				{
+					title: '转角沙发',
+					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
+					img: require('../Images/sofa_03.jpg'),
+					url: '###'
+				},
+				{
+					title: '单人沙发',
+					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
+					img: require('../Images/sofa_04.jpg'),
+					url: '###'
+				},
+				{
+					title: '组合沙发',
+					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
+					img: require('../Images/sofa_05.jpg'),
+					url: '###'
+				},
+				{
+					title: '双人沙发',
+					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
+					img: require('../Images/sofa_06.jpg'),
+					url: '###'
+				},
+				{
+					title: '单人沙发',
+					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
+					img: require('../Images/sofa_07.jpg'),
+					url: '###'
+				},
+				{
+					title: '组合沙发',
+					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
+					img: require('../Images/sofa_08.jpg'),
+					url: '###'
+				}
+			];
+
+			let newArr = [];
+			if (params.page !== 1) {
+				for (let i = 0, iLength = data.length; i < iLength; i ++) {
+					let number = Math.floor(Math.random() * data.length);
+					newArr.push({ ...data[number] });
+					data.splice(number, 1);
+				};
+			} else if (params.keyword) {
+				newArr = data.filter(item => new RegExp(params.keyword).test(item.title));
+			} else {
+				newArr = data;
+			};
+
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve([200, newArr]);
+				}, 500);
+			});
+		});
 	}
 }

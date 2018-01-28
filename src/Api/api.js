@@ -23,3 +23,11 @@ export const getIndexProductData = () => {
 export const getMenuList = () => {
 	return axios.get(`${baseUrl}/menuList`);
 };
+
+export const getSortingList = () => {
+	return axios.get(`${baseUrl}/sortingList`);
+};
+
+export const getSofaData = params => {
+	return axios.get(`${baseUrl}/sofaData`, { params });
+};

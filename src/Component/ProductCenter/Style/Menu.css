@@ -97,11 +97,12 @@
 .product-menu-right-container {
 	border: 1px solid #e5e5e5;
 	border-top: none;
-	padding-top: 28px;
+	padding-bottom: 34px;
+	overflow: hidden;
 }
 .product-menu-right-columns {
 	overflow: hidden;
-	margin-bottom: 20px;
+	margin-top: 20px;
 }
 .product-menu-right-columns b {
 	font-size: 14px;

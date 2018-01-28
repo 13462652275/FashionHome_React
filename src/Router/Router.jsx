@@ -10,6 +10,7 @@ import './Style/Router.css';
 //公共组件
 import Header from '../Component/Common/Header';
 import Footer from '../Component/Common/Footer';
+import IsClickOutside from '../Component/Common/IsClickOutside';
 
 //导航组件
 import Index from '../Component/HomePage/Index';
@@ -105,6 +106,10 @@ class RouteConfig extends Component {
 		this.showOrHidden = () => {
 			this.setState({showNavFlag: !this.state.showNavFlag});
 		}
+
+		this.clickoutside = () => {
+			this.setState({showNavFlag: false});
+		}
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
@@ -116,7 +121,7 @@ class RouteConfig extends Component {
 			<Router>
 				<div className="container">
 					<Header />
-					<nav>
+					<IsClickOutside tag="nav" clickoutside={this.clickoutside}>
 						<div className="nav-wrapper clearfix">
 							<i 
 								style={{color: this.state.showNavFlag ? '#77c111' : '#fff'}}
@@ -130,7 +135,8 @@ class RouteConfig extends Component {
 							<div className="nav-cn"></div>
 							<ul 
 								style={{right: this.state.showNavFlag ? '0' : '-71px'}} 
-								className="nav-list">
+								className="nav-list"
+								id="nav-list">
 								{
 									this.state.routes.map((item, i) => {
 										return (
@@ -153,7 +159,7 @@ class RouteConfig extends Component {
 								style={{left: this.state.currentIndex * 135 + 'px'}}
 								></div>
 						</div>
-					</nav>
+					</IsClickOutside>
 					{
 						this.state.routes.map((item, i) => {
 							return (

@@ -1,0 +1,13 @@
+.product-sofa-list {
+	overflow: hidden;
+}
+.product-sofa-list li {
+	float: left;
+	position: relative;
+	width: 585px;
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+.product-sofa-list li:nth-child(odd) {
+	margin-right: 30px;
+}

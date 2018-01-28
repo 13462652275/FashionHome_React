@@ -14,7 +14,7 @@ class Menu extends Component {
 			list: []
 		};
 
-		this.tabClick = (index) => {
+		this.tabClick = index => {
 			this.setState({ index, name: this.state.list[index].title });
 		};
 	}
@@ -124,6 +124,6 @@ class MenuRightColumn extends Component {
 			</div>
 		);
 	}
-}
+};
 
 export default Menu;

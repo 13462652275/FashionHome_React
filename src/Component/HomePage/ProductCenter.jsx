@@ -75,16 +75,14 @@ class ProductCenter extends Component {
 			<div className="index-product wrapper">
 				{this.props.children}
 				{
-					this.state.data.map((item, i) => {
-						return (
-							<ProductItem data={item} key={i}></ProductItem>
-						);
-					})
+					this.state.data.map((item, i) => (
+						<ProductItem data={item} key={i}></ProductItem>
+					))
 				}
 			</div>
 		);
 	}
-}
+};
 
 class ProductItem extends Component {
 	constructor(props) {
@@ -105,16 +103,16 @@ class ProductItem extends Component {
 			this.setState({ animation: { transition, marginLeft } });
 		}
 
-		this.touchStart = (e) => {
+		this.touchStart = e => {
 			this.setState({ clientX: e.changedTouches[0].clientX });
 		}
 
-		this.touchMove = (e) => {
+		this.touchMove = e => {
 			const distance = e.changedTouches[0].clientX - this.state.clientX;
 			this.animation('none', this.state.currentDistance + distance);
 		}
 
-		this.touchEnd = (e) => {
+		this.touchEnd = e => {
 			let marginLeft = this.state.animation.marginLeft;
 			if (- marginLeft > this.state.maxDistance) {
 				marginLeft = - this.state.maxDistance;
@@ -126,7 +124,7 @@ class ProductItem extends Component {
 			this.setState({ currentDistance: marginLeft });
 		}
 
-		this.selected = (i) => {
+		this.selected = i => {
 			this.setState({ index: i });
 		}
 	}
@@ -147,30 +145,32 @@ class ProductItem extends Component {
 
 	render () {
 		return (
-			<div className="index-product-header">
+			<div className="index-product-piece">
 				<h4 className="index-product-title">
 					<i className="iconfont" dangerouslySetInnerHTML={{__html: this.props.data.iconCode}}></i>
 					<b>{this.props.data.titleCH}</b>
 					<span>{this.props.data.titleEN}</span>
 					<a href="###">More></a>
 				</h4>
-				<ul 
-					className="index-product-nav" 
-					style={{width: this.state.navWidth, ...this.state.animation}}
-					onTouchStart={this.touchStart}
-					onTouchMove={this.touchMove}
-					onTouchEnd={this.touchEnd}>
-					{
-						this.props.data.data.map((item, i) => (
-							<li key={i}>
-								<span 
-									style={{color: this.state.index === i ? '#77c111' : '#333'}}
-									onClick={this.selected.bind(this, i)}
-									>{item.name}</span>
-							</li>
-						))
-					}
-				</ul>
+				<div className="index-product-nav-border">
+					<ul 
+						className="index-product-nav" 
+						style={{width: this.state.navWidth, ...this.state.animation}}
+						onTouchStart={this.touchStart}
+						onTouchMove={this.touchMove}
+						onTouchEnd={this.touchEnd}>
+						{
+							this.props.data.data.map((item, i) => (
+								<li key={i}>
+									<span 
+										style={{color: this.state.index === i ? '#77c111' : '#333'}}
+										onClick={this.selected.bind(this, i)}
+										>{item.name}</span>
+								</li>
+							))
+						}
+					</ul>
+				</div>
 				<div className={this.props.data.className}>
 					{
 						this.props.data.data[this.state.index].data.map((item, i) => {
@@ -189,6 +189,6 @@ class ProductItem extends Component {
 			</div>
 		);
 	}
-}
+};
 
 export default ProductCenter;

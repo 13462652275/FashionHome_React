@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fromJS, is } from 'immutable';
+import { Link } from 'react-router-dom';
 
 import './Style/Banner.css';
 
@@ -153,11 +154,9 @@ class Banner extends Component {
 							this.state.bannerList.map((item, i) => {
 								return (
 									<li style={{width: this.state.bannerWidth}} key={i}>
-										<a 
-											href={item.url} 
-											rel="noopener noreferrer">
+										<Link to={item.url}>
 											<img src={item.img} alt={item.alt}/>
-										</a>
+										</Link>
 									</li>
 								);
 							})

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fromJS, is } from 'immutable';
+import { Link } from 'react-router-dom';
 
 import './Style/ActivitiesAndInfo.css';
 
@@ -13,7 +14,7 @@ class ActivitiesAndInfo extends Component {
 			<div className="index-activities">
 				{this.props.children}
 				<div className="index-activities-content">
-					<a href="###" className="fl">
+					<Link to="/" className="fl">
 						<img src={require('../../Images/activity_pic_01.png')} alt=""/>
 						<div className="index-activities-info">
 							<b>最新活动</b>
@@ -22,8 +23,8 @@ class ActivitiesAndInfo extends Component {
 							</span>
 							<i className="fr">了解更多></i>
 						</div>
-					</a>
-					<a href="###" className="fr">
+					</Link>
+					<Link to="/" className="fr">
 						<img src={require('../../Images/activity_pic_02.png')} alt=""/>
 						<div className="index-activities-info">
 							<b>3周年庆典</b>
@@ -32,7 +33,7 @@ class ActivitiesAndInfo extends Component {
 							</span>
 							<i className="fr">了解更多></i>
 						</div>
-					</a>
+					</Link>
 				</div>
 			</div>
 		);

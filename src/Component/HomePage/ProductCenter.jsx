@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { fromJS, is } from 'immutable';
+import { Link } from 'react-router-dom';
 import { getIndexProductData } from '../../Api/api';
 
 import './Style/ProductCenter.css';
+
+import MenuSwiper from '../Common/MenuSwiper';
 
 class ProductCenter extends Component {
 	constructor(props) {
@@ -88,40 +91,7 @@ class ProductItem extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			navWidth: '100%',
-			maxDistance: 0,
-			clientX: 0,
-			currentDistance: 0,
-			animation: {
-				transition: 'none',
-				marginLeft: 0
-			},
 			index: 0
-		}
-
-		this.animation = (transition, marginLeft) => {
-			this.setState({ animation: { transition, marginLeft } });
-		}
-
-		this.touchStart = e => {
-			this.setState({ clientX: e.changedTouches[0].clientX });
-		}
-
-		this.touchMove = e => {
-			const distance = e.changedTouches[0].clientX - this.state.clientX;
-			this.animation('none', this.state.currentDistance + distance);
-		}
-
-		this.touchEnd = e => {
-			let marginLeft = this.state.animation.marginLeft;
-			if (- marginLeft > this.state.maxDistance) {
-				marginLeft = - this.state.maxDistance;
-				this.animation('margin-left 0.7s', marginLeft);
-			} else if (marginLeft > 0) {
-				marginLeft = 0;
-				this.animation('margin-left 0.7s', marginLeft);
-			}
-			this.setState({ currentDistance: marginLeft });
 		}
 
 		this.selected = i => {
@@ -133,16 +103,6 @@ class ProductItem extends Component {
 		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
 	}
 
-	componentWillMount () {
-		const navWidth = this.props.data.data.length * 64;
-		if (window.innerWidth < navWidth) {
-			this.setState({
-				navWidth,
-				maxDistance: navWidth > window.innerWidth ? navWidth - window.innerWidth : 0
-			});
-		}
-	}
-
 	render () {
 		return (
 			<div className="index-product-piece">
@@ -150,38 +110,35 @@ class ProductItem extends Component {
 					<i className="iconfont" dangerouslySetInnerHTML={{__html: this.props.data.iconCode}}></i>
 					<b>{this.props.data.titleCH}</b>
 					<span>{this.props.data.titleEN}</span>
-					<a href="###">More></a>
+					<Link to="/">More></Link>
 				</h4>
 				<div className="index-product-nav-border">
-					<ul 
-						className="index-product-nav" 
-						style={{width: this.state.navWidth, ...this.state.animation}}
-						onTouchStart={this.touchStart}
-						onTouchMove={this.touchMove}
-						onTouchEnd={this.touchEnd}>
-						{
-							this.props.data.data.map((item, i) => (
-								<li key={i}>
-									<span 
-										style={{color: this.state.index === i ? '#77c111' : '#333'}}
-										onClick={this.selected.bind(this, i)}
-										>{item.name}</span>
-								</li>
-							))
-						}
-					</ul>
+					<MenuSwiper>
+						<ul className="index-product-nav" >
+							{
+								this.props.data.data.map((item, i) => (
+									<li key={i}>
+										<span 
+											style={{color: this.state.index === i ? '#77c111' : '#333'}}
+											onClick={this.selected.bind(this, i)}
+											>{item.name}</span>
+									</li>
+								))
+							}
+						</ul>
+					</MenuSwiper>
 				</div>
 				<div className={this.props.data.className}>
 					{
 						this.props.data.data[this.state.index].data.map((item, i) => {
 							return (
-								<a className={i === 0 ? 'big-picture' : 'small-info'} href={item.url} key={i}>
+								<Link className={i === 0 ? 'big-picture' : 'small-info'} to={item.url} key={i}>
 									<img src={item.img} alt={item.title}/>
 									<div className={i === 0 ? 'big-picture-info' : 'small-picture-info'}>
 										<span>{item.title}</span>
 										<i>了解更多></i>
 									</div>
-								</a>
+								</Link>
 							);
 						})
 					}

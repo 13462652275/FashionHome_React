@@ -9,9 +9,9 @@ export default {
 		let mock = new MockAdapter(axios);
 		
 		mock.onGet('/footerList').reply(200, {
-				"家具": ["古典", "新古典", "现代"],
-				"建材": ["卫浴", "卧室用品", "架子", "置物台", "餐厅用品", "墙板门框"],
-				"饰品": ["灯", "靠包", "饰品"]
+				'家具': [ '古典', '新古典', '现代' ],
+				'建材': [ '卫浴', '卧室用品', '架子', '置物台', '餐厅用品', '墙板门框' ],
+				'饰品': [ '灯', '靠包', '饰品' ]
 			}
 		);
 
@@ -21,22 +21,22 @@ export default {
 					resolve([200, [
 						{
 							img: require('../Images/index_banner01.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居首页'
 						},
 						{
 							img: require('../Images/index_banner02.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居首页'
 						},
 						{
 							img: require('../Images/index_banner03.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居首页'
 						},
 						{
 							img: require('../Images/index_banner04.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居首页'
 						}
 					]]);
@@ -50,47 +50,47 @@ export default {
 					resolve([200, [
 						{
 							img: require('../Images/index_classic_01.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居'
 						},
 						{
 							img: require('../Images/index_classic_02.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居'
 						},
 						{
 							img: require('../Images/index_classic_03.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居'
 						},
 						{
 							img: require('../Images/index_classic_04.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居'
 						},
 						{
 							img: require('../Images/index_classic_05.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居'
 						},
 						{
 							img: require('../Images/index_classic_06.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居'
 						},
 						{
 							img: require('../Images/index_classic_07.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居'
 						},
 						{
 							img: require('../Images/index_classic_08.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居'
 						},
 						{
 							img: require('../Images/index_classic_09.jpg'),
-							url: '###',
+							url: '/',
 							alt: '时尚家居'
 						}
 					]]);
@@ -104,56 +104,56 @@ export default {
 					{
 						title: '客厅三人沙发',
 						img: require('../Images/pc_pic_01.png'),
-						url: '###'
+						url: '/'
 					},
 					{
 						title: '客厅单人沙发',
 						img: require('../Images/pc_pic_02.png'),
-						url: '###'
+						url: '/'
 					},
 					{
 						title: '客厅组合沙发',
 						img: require('../Images/pc_pic_03.png'),
-						url: '###'
+						url: '/'
 					},
 					{
 						title: '客厅双人沙发',
 						img: require('../Images/pc_pic_04.png'),
-						url: '###'
+						url: '/'
 					}
 				],
 				[
 					{
 						title: '会议室隔板石材',
 						img: require('../Images/bm_pic_01.png'),
-						url: '###'
+						url: '/'
 					},
 					{
 						title: '客厅地板',
 						img: require('../Images/bm_pic_02.png'),
-						url: '###'
+						url: '/'
 					},
 					{
 						title: '厨房瓷砖',
 						img: require('../Images/bm_pic_03.png'),
-						url: '###'
+						url: '/'
 					}
 				],
 				[
 					{
 						title: '细绒地毯',
 						img: require('../Images/dc_pic_02.png'),
-						url: '###'
+						url: '/'
 					},
 					{
 						title: '卧室饰品',
 						img: require('../Images/dc_pic_01.png'),
-						url: '###'
+						url: '/'
 					},
 					{
 						title: '卧室灯具',
 						img: require('../Images/dc_pic_03.png'),
-						url: '###'
+						url: '/'
 					}
 				],
 				[ '客厅', '卧室', '书房', '餐厅', '办公', '儿童', '房厨', '户外' ],
@@ -253,54 +253,61 @@ export default {
 		});
 
 		mock.onGet('/sofaData').reply(({ params }) => {
+			const url = '/';
 			let data = [
 				{
 					title: '美人榻',
 					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
 					img: require('../Images/sofa_01.png'),
-					url: '###'
+					url,
 				},
 				{
 					title: '三人沙发',
 					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
 					img: require('../Images/sofa_02.jpg'),
-					url: '###'
+					url,
 				},
 				{
 					title: '转角沙发',
 					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
 					img: require('../Images/sofa_03.jpg'),
-					url: '###'
+					url,
 				},
 				{
 					title: '单人沙发',
 					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
 					img: require('../Images/sofa_04.jpg'),
-					url: '###'
+					url,
+				},
+				{
+					title: '单人沙发',
+					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
+					img: require('../Images/sofa_04.jpg'),
+					url,
 				},
 				{
 					title: '组合沙发',
 					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
 					img: require('../Images/sofa_05.jpg'),
-					url: '###'
+					url,
 				},
 				{
 					title: '双人沙发',
 					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
 					img: require('../Images/sofa_06.jpg'),
-					url: '###'
+					url,
 				},
 				{
 					title: '单人沙发',
 					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
 					img: require('../Images/sofa_07.jpg'),
-					url: '###'
+					url,
 				},
 				{
 					title: '组合沙发',
 					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
 					img: require('../Images/sofa_08.jpg'),
-					url: '###'
+					url,
 				}
 			];
 

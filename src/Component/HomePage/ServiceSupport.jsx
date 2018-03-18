@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fromJS, is } from 'immutable';
+import { Link } from 'react-router-dom';
 
 import './Style/ServiceSupport.css';
 
@@ -55,9 +56,9 @@ class ServiceSupport extends Component {
 						this.state.indexServiceList.map((item, i) => {
 							return (
 								<div className="index-service-item-box" key={i}>
-									<a href="###">
+									<Link to="/">
 										<span className="iconfont" dangerouslySetInnerHTML={{__html: item.iconCode}}></span>
-									</a>
+									</Link>
 									<h6>{item.title}</h6>
 									<p className="one">{item.text}</p>
 								</div>

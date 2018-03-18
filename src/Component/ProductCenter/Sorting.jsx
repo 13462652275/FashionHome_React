@@ -3,6 +3,8 @@ import { fromJS, is } from 'immutable';
 
 import './Style/Sorting.css';
 
+import MenuSwiper from '../Common/MenuSwiper';
+
 class Sorting extends Component {
 	constructor (props) {
 		super(props);
@@ -74,24 +76,21 @@ class Sorting extends Component {
 	render () {
 		return (
 			<div className="product-sorting wrapper">
-				<ul 
-					className="product-sorting-list" 
-					style={{width: this.state.navWidth, ...this.state.animation}}
-					onTouchStart={this.touchStart}
-					onTouchMove={this.touchMove}
-					onTouchEnd={this.touchEnd}>
-					<li> 排序分类：</li>
-					{
-						this.props.data.map((item, i) => (
-							<li key={i}>
-								<span 
-									style={{color: this.state.index === i ? '#77c111' : '#333'}}
-									onClick={this.selected.bind(this, i, item)}
-									>{item}</span>
-							</li>
-						))
-					}
-				</ul>
+				<MenuSwiper>
+					<ul className="product-sorting-list" >
+						<li> 排序分类：</li>
+						{
+							this.props.data.map((item, i) => (
+								<li key={i}>
+									<span 
+										style={{color: this.state.index === i ? '#77c111' : '#333'}}
+										onClick={this.selected.bind(this, i, item)}
+										>{item}</span>
+								</li>
+							))
+						}
+					</ul>
+				</MenuSwiper>
 			</div>
 		);
 	}

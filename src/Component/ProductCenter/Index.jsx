@@ -4,12 +4,12 @@ import { changeIndex } from '../../Redux/Action/Action';
 import { dispatch } from '../../Redux/Store/Store';
 import { getSortingList, getSofaData } from '../../Api/api';
 
-import './Style/Index.css';
 
 import HeaderBanner from '../Common/HeaderBanner';
 import Menu from './Menu';
 import Sorting from './Sorting';
 import SofaList from './SofaList';
+import Page from '../Common/Page';
 
 class Index extends Component {
 	constructor (props) {
@@ -51,10 +51,14 @@ class Index extends Component {
 				<HeaderBanner 
 					src={require('../../Images/pro_banner.jpg')} 
 					title="产品中心" 
-					text="PRODUCT CENTER"></HeaderBanner>
+					text="PRODUCT CENTER"
+					></HeaderBanner>
 				<Menu></Menu>
 				<Sorting data={this.state.sortingList} requestSofaData={this.requestSofaData}></Sorting>
 				<SofaList data={this.state.sofaData}></SofaList>
+				<div className="wrapper">
+					<Page></Page>
+				</div>
 			</div>
 		);
 	}

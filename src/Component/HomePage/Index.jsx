@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fromJS, is } from 'immutable';
+import { Link } from 'react-router-dom';
 import { changeIndex } from '../../Redux/Action/Action';
 import { dispatch } from '../../Redux/Store/Store';
 import { getBannerList, getSwiperList } from '../../Api/api';
@@ -98,7 +99,7 @@ class BannerInfo extends Component {
 					他们敢于向日常生活挑战，重视每一个细节。
 				</p>
 				<img className="banner-info-divider" width="100%" src={require('../../Images/index_banner_pic01.png')} alt=""/>
-				<a className="details" href="###">查看详情</a>
+				<Link className="details" to="/">查看详情</Link>
 			</div>
 		);
 	}

@@ -12,7 +12,7 @@ class IsClickOutside extends Component {
 		super(props);
 		this.isOutside = event => {
 			let [ isChild, node ] = [ false, event.target ];
-			while (node.id !== 'root') {
+			while (node && node.id !== 'root') {
 				if (is(fromJS(node), fromJS(this.refs.tag))) {
 					isChild = true;
 					break;

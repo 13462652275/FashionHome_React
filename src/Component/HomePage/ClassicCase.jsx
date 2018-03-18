@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fromJS, is } from 'immutable';
+import { Link } from 'react-router-dom';
 
 import swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';
@@ -50,9 +51,9 @@ class ClassicCase extends Component {
 								this.props.swiperList.map((item, i) => {
 									return (
 										<div className="swiper-slide" key={i}>
-											<a href={item.url}>
+											<Link to={item.url}>
 												<img src={item.img} alt={item.alt} />
-											</a>
+											</Link>
 										</div>
 									);
 								})

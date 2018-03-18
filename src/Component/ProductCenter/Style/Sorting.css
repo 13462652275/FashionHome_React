@@ -1,14 +1,15 @@
 .product-sorting {
 	margin: 20px auto;
-	padding: 15px 0;
 	background-color: #f6f6f6;
 	border: 1px solid #e5e5e5;
 }
 .product-sorting-list {
+	padding: 15px 0;
 	overflow: hidden;
+	white-space: nowrap;
 }
 .product-sorting-list li {
-	float: left;
+	display: inline-block;
 	padding: 0 28px;
 	line-height: 13px;
 	border-right: 2px solid #bebebe;

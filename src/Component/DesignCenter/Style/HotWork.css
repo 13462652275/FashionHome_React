@@ -1,0 +1,107 @@
+/* 大屏幕 */
+.hot-work-list {
+	overflow: hidden;
+}
+
+.hot-work-item {
+	float: left;
+	width: 380px;
+	height: 300px;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	position: relative;
+	overflow: hidden;
+}
+
+.hot-work-item img {
+	width: 100%;
+}
+
+.hot-work-list .hot-work-item:nth-child(3n + 3) {
+	margin-right: 0;
+}
+
+.hot-work-item-detail {
+	width: 100%;
+	background-color: rgba(0, 0, 0, .7);
+	position: absolute;
+	top: 85%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #fff;
+	text-align: center;
+	transition: all 1s;
+}
+
+.hot-work-item-detail p {
+	font-size: 16px;
+	line-height: 45px;
+	transition: font-size 1s;
+}
+
+.hot-work-item-detail span {
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.hot-work-item:hover .hot-work-item-detail {
+	top: 0;
+	padding-top: 35%;
+}
+
+.hot-work-item:hover .hot-work-item-detail p {
+	font-size: 24px;
+}
+
+.hot-work-item:hover .hot-work-item-detail span {
+	opacity: 1;
+}
+
+
+/* 小屏幕 */
+@media (max-width: 1200px) {
+	
+}
+
+
+/* 手机屏幕 */
+@media (max-width: 768px) {
+	.hot-work-item {
+		float: none;
+		width: 80%;
+		height: auto;
+		margin: 0 auto 30px auto;
+	}
+
+	.hot-work-list .hot-work-item:nth-child(3n + 3) {
+		margin-right: auto;
+	}
+
+	.hot-work-item-detail {
+		width: 90%;
+		height: 10vw;
+		padding: 0 5%;
+		line-height: 10vw;
+	}
+
+	.hot-work-item-detail p {
+		float: left;
+		line-height: 10vw;
+	}
+
+	.hot-work-item-detail span {
+		float: right;
+		display: block;
+		opacity: 1;
+	}
+
+	.hot-work-item:hover .hot-work-item-detail {
+		top: 85%;
+		padding-top: 0;
+	}
+
+	.hot-work-item:hover .hot-work-item-detail p {
+		font-size: 16px;
+	}
+}

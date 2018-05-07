@@ -1,14 +1,23 @@
+//基础模块
 import React, { Component } from 'react';
-import { fromJS, is } from 'immutable';
 import { Link } from 'react-router-dom';
-import { getIndexProductData } from '../../Api/api';
 
+//第三方模块
+import { fromJS, is } from 'immutable';
+
+//API
+import { getIndexProductData } from 'Api';
+
+//样式
 import './Style/ProductCenter.css';
 
-import MenuSwiper from '../Common/MenuSwiper';
+//工具组件
+import MenuSwiper from 'Tool/MenuSwiper';
+import Icon from 'Tool/Icon';
+
 
 class ProductCenter extends Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			data: [],
@@ -35,8 +44,8 @@ class ProductCenter extends Component {
 				buliding: [],
 				decoration: []
 			}
-		}
-	}
+		};
+	};
 
 	componentWillMount () {
 		getIndexProductData().then(({ data }) => {
@@ -67,24 +76,24 @@ class ProductCenter extends Component {
 		}, error => {
 			console.log(error);
 		});
-	}
+	};
 
-	shouldComponentUpdate(nextProps, nextState) {
+	shouldComponentUpdate (nextProps, nextState) {
 		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
-	}
+	};
 
 	render () {
 		return (
 			<div className="index-product wrapper">
-				{this.props.children}
+				{ this.props.children }
 				{
 					this.state.data.map((item, i) => (
-						<ProductItem data={item} key={i}></ProductItem>
+						<ProductItem data={ item } key={ i }/>
 					))
 				}
 			</div>
 		);
-	}
+	};
 };
 
 class ProductItem extends Component {
@@ -92,22 +101,22 @@ class ProductItem extends Component {
 		super(props);
 		this.state = {
 			index: 0
-		}
+		};
 
 		this.selected = i => {
 			this.setState({ index: i });
-		}
-	}
+		};
+	};
 
-	shouldComponentUpdate(nextProps, nextState) {
+	shouldComponentUpdate (nextProps, nextState) {
 		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
-	}
+	};
 
 	render () {
 		return (
 			<div className="index-product-piece">
 				<h4 className="index-product-title">
-					<i className="iconfont" dangerouslySetInnerHTML={{__html: this.props.data.iconCode}}></i>
+					<Icon>{this.props.data.iconCode}</Icon>
 					<b>{this.props.data.titleCH}</b>
 					<span>{this.props.data.titleEN}</span>
 					<Link to="/">More></Link>
@@ -145,7 +154,7 @@ class ProductItem extends Component {
 				</div>
 			</div>
 		);
-	}
+	};
 };
 
 export default ProductCenter;

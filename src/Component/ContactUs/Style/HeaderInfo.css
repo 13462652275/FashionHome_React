@@ -1,0 +1,119 @@
+/* 电脑等等设备屏幕 */
+.contact-us-banner {
+	overflow: hidden;
+	position: relative;
+}
+
+.contact-us-banner > img {
+	width: 100%;
+}
+
+.contact-us-info {
+	position: absolute;
+	top: 3vw;
+	left: 10vw;
+	color: #333;
+	font-size: 2vw;
+	font-weight: normal;
+	overflow: hidden;
+}
+
+.contact-us-company-name {
+	font-size: 30px;
+	opacity: 0;
+	animation: opacity .5s ease-out forwards;
+}
+
+.contact-us-relation {
+	font-size: 18px;
+	line-height: 42px;
+	position: relative;
+	left: -100%;
+}
+
+.contact-us-relation:nth-child(2) {
+	animation: left .5s .5s ease-out forwards;
+}
+
+.contact-us-relation:nth-child(3) {
+	animation: left .5s 1s ease-out forwards;
+}
+
+.contact-us-relation:nth-child(4) {
+	animation: left .5s 1.5s ease-out forwards;
+}
+
+.contact-us-web-address {
+	font-size: 18px;
+	line-height: 42px;
+	position: relative;
+	bottom: -50px;
+	animation: top .5s 2s ease-out forwards;
+}
+
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes left {
+	from {
+		left: -100%;
+	}
+
+	to {
+		left: 0;
+	}
+}
+
+@keyframes top {
+	from {
+		bottom: -50px;
+	}
+
+	to {
+		bottom: 0;
+	}
+}
+
+
+/* iPad等移动设备屏幕 */
+@media (max-width: 1200px) {
+	.contact-us-banner > img {
+		width: 150%;
+		position: relative;
+		left: 50%;
+		margin-left: -75%;
+	}
+
+	.contact-us-relation, 
+	.contact-us-web-address {
+		line-height: 2;
+	}
+}
+
+
+/* 手机等设备屏幕 */
+@media (max-width: 767px) {
+	.contact-us-info {
+		position: static;
+		top: auto;
+		left: auto;
+		text-align: center;
+	}
+
+	.contact-us-company-name {
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	.contact-us-relation, 
+	.contact-us-web-address {
+		font-size: 14px;
+	}
+}

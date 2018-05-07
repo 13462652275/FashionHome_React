@@ -1,27 +1,25 @@
+//基础模块
 import React, { Component } from 'react';
-import { fromJS, is } from 'immutable';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { fromJS, is } from 'immutable';
 
+//样式
 import './Style/SofaList.css';
+
 
 class SofaList extends Component {
 	static propTypes = {
 		data: PropTypes.array
-	}
+	};
 
-	constructor (props) {
-		super(props);
-		this.state = {};
-	}
-
-	shouldComponentUpdate(nextProps, nextState) {
+	shouldComponentUpdate (nextProps, nextState) {
 		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
-	}
+	};
 
 	render () {
 		return (
-			<ul className="product-sofa-list wrapper">
+			<ul className="product-sofa-list">
 				{
 					this.props.data.map((item, i) => (
 						<li key={i}>
@@ -45,7 +43,7 @@ class SofaList extends Component {
 				}
 			</ul>
 		);
-	}
-}
+	};
+};
 
 export default SofaList;

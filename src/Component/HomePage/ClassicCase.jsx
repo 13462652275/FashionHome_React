@@ -1,24 +1,25 @@
+//基础模块
 import React, { Component } from 'react';
-import { fromJS, is } from 'immutable';
 import { Link } from 'react-router-dom';
+import { fromJS, is } from 'immutable';
 
+//引入第三方模块
 import swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';
+
+//样式
 import './Style/ClassicCase.css';
 
+
 class ClassicCase extends Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			bannerList: [],
 			bannerWidth: 0,
 			currentIndex: 0
 		};
-	}
-
-	shouldComponentUpdate (nextProps, nextState) {
-		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
-	}
+	};
 
 	componentDidUpdate (nextProps) {
 		new swiper(this.refs.banner, {
@@ -38,21 +39,25 @@ class ClassicCase extends Component {
 				slideShadows : false
 			}
 		});
-	}
+	};
+
+	shouldComponentUpdate (nextProps, nextState) {
+		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
+	};
 
 	render () {
 		return (
 			<div className="index-case">
-				{this.props.children}
+				{ this.props.children }
 				<div className="case-banner">
 					<div className="swiper-container" ref="banner">
 						<div className="swiper-wrapper">
 							{
 								this.props.swiperList.map((item, i) => {
 									return (
-										<div className="swiper-slide" key={i}>
-											<Link to={item.url}>
-												<img src={item.img} alt={item.alt} />
+										<div className="swiper-slide" key={ i }>
+											<Link to={ item.url }>
+												<img src={ item.img } alt={ item.alt } />
 											</Link>
 										</div>
 									);
@@ -64,7 +69,7 @@ class ClassicCase extends Component {
 				</div>
 			</div>
 		);
-	}
+	};
 };
 
 export default ClassicCase;

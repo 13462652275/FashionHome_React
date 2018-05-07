@@ -1,0 +1,104 @@
+/* 电脑等等设备屏幕 */
+.contact-us-service {
+	overflow: hidden;
+	padding: 5% 0;
+}
+
+.contact-us-service-item {
+	float: left;
+	width: 33.3%;
+	text-align: center;
+}
+
+.contact-us-service-item-icon {
+	display: block;
+	width: 90px;
+	height: 90px;
+	margin: 0 auto;
+	color: #c0c4c0;
+	font-size: 50px;
+	text-align: center;
+	position: relative;
+}
+
+.contact-us-service-item-circle {
+	width: 84px;
+	height: 84px;
+	border: 3px solid #c0c4c0;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.contact-us-service-item-circle-left,
+.contact-us-service-item-circle-right {
+	width: 50%;
+	height: 0%;
+	background-color: #fff;
+	transition: height 1s;
+	position: absolute;
+	animation: height 1s;
+}
+
+.contact-us-service-item-circle-left {
+	right: 0;
+	top: 0;
+}
+
+.contact-us-service-item-circle-right {
+	left: 0;
+	bottom: 0;
+}
+
+.contact-us-service-item-iconfont {
+	line-height: 84px;
+	position: relative;
+	z-index: 100;
+}
+
+.contact-us-service-item-title {
+	color: #333;
+	font-size: 20px;
+	margin-top: 45px;
+	transform: scale(1, 1);
+	animation: scale 1s;
+}
+
+.contact-us-service-item-describe {
+	color: #333;
+	font-size: 14px;
+	transform: scale(1, 1);
+	animation: scale 1s;
+}
+
+
+@keyframes height {
+	from {
+		height: 100%;
+	}
+
+	to {
+		height: 0%;
+	}
+}
+
+@keyframes scale {
+	from {
+		transform: scale(0, 0);
+	}
+
+	to {
+		transform: scale(1, 1);
+	}
+}
+
+
+/* 手机等设备屏幕 */
+@media (max-width: 767px) {
+	.contact-us-service-item {
+		float: none;
+		width: 90%;
+		margin: 20% auto;
+	}
+}

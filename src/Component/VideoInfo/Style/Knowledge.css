@@ -1,0 +1,53 @@
+/* 大屏幕 */
+.video-info-knowledge {
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+.video-info-knowledge > div {
+	float: left;
+	width: 50%;
+}
+
+.video-info-knowledge-big {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.video-info-knowledge-big > img {
+	width: 100%;
+}
+
+.video-info-knowledge-small {
+	padding: 15% 0;
+	text-align: center;
+}
+
+
+/* 手机屏幕 */
+@media (max-width: 768px) {
+	.video-info-knowledge > div {
+		float: none;
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.video-info-knowledge-big {
+		width: 100%;
+		margin-bottom: 5%;
+	}
+
+	.video-info-knowledge-big > img {
+		width: 100%;
+	}
+
+	.video-info-knowledge-small {
+		padding: 0;
+		text-align: center;
+		margin-bottom: 5%;
+	}
+
+	.video-info-knowledge-small > img {
+		width: 100%;
+	}
+}

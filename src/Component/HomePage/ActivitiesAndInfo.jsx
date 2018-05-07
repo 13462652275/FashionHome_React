@@ -1,21 +1,26 @@
+//基础模块
 import React, { Component } from 'react';
-import { fromJS, is } from 'immutable';
 import { Link } from 'react-router-dom';
 
+//第三方模块
+import { fromJS, is } from 'immutable';
+
+//样式
 import './Style/ActivitiesAndInfo.css';
 
+
 class ActivitiesAndInfo extends Component {
-	shouldComponentUpdate(nextProps, nextState) {
+	shouldComponentUpdate (nextProps, nextState) {
 		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
-	}
+	};
 
 	render () {
 		return (
 			<div className="index-activities">
-				{this.props.children}
+				{ this.props.children }
 				<div className="index-activities-content">
 					<Link to="/" className="fl">
-						<img src={require('../../Images/activity_pic_01.png')} alt=""/>
+						<img src={ require('../../Images/activity_pic_01.png') } alt=""/>
 						<div className="index-activities-info">
 							<b>最新活动</b>
 							<span>
@@ -25,7 +30,7 @@ class ActivitiesAndInfo extends Component {
 						</div>
 					</Link>
 					<Link to="/" className="fr">
-						<img src={require('../../Images/activity_pic_02.png')} alt=""/>
+						<img src={ require('../../Images/activity_pic_02.png') } alt=""/>
 						<div className="index-activities-info">
 							<b>3周年庆典</b>
 							<span>
@@ -37,7 +42,7 @@ class ActivitiesAndInfo extends Component {
 				</div>
 			</div>
 		);
-	}
+	};
 };
 
 export default ActivitiesAndInfo;

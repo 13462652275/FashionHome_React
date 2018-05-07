@@ -1,0 +1,43 @@
+/* 大屏幕 */
+.slide-list {
+	position: relative;
+}
+
+.slide-view {
+	overflow: hidden;
+}
+
+.slide-list-prev-btn,
+.slide-list-next-btn {
+	width: 54px;
+	height: 100px;
+	background-image: url('../../../Images/spr.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
+	cursor: pointer;
+	opacity: 0.5;
+	transition: opacity .5s;
+}
+
+.slide-list-prev-btn {
+	background-position: 0px 0px;
+	left: -90px;
+}
+
+.slide-list-next-btn {
+	background-position: -54px 0px;
+	right: -90px;
+}
+
+/* 小屏幕 */
+@media (max-width: 1200px) {
+	
+}
+
+
+/* 手机屏幕 */
+@media (max-width: 768px) {
+	
+}

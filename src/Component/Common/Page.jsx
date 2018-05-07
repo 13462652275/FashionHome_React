@@ -10,7 +10,7 @@ class Page extends Component {
 		pageSize: PropTypes.number,
 		total: PropTypes.number,
 		onChange:  PropTypes.func
-	}
+	};
 
 	static defaultProps = {
 		current: 1,

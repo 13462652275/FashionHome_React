@@ -1,4 +1,4 @@
-import axios from '../Api/api';
+import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
 export default {
@@ -253,7 +253,7 @@ export default {
 		});
 
 		mock.onGet('/sofaData').reply(({ params }) => {
-			const url = '/';
+			const url = '/ProductCenter';
 			let data = [
 				{
 					title: '美人榻',
@@ -271,12 +271,6 @@ export default {
 					title: '转角沙发',
 					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
 					img: require('../Images/sofa_03.jpg'),
-					url,
-				},
-				{
-					title: '单人沙发',
-					describe: '客厅卧室单人拼接沙发\r下部特色扣带式链接\r真皮材质',
-					img: require('../Images/sofa_04.jpg'),
 					url,
 				},
 				{
@@ -327,6 +321,317 @@ export default {
 			return new Promise((resolve, reject) => {
 				setTimeout(() => {
 					resolve([200, newArr]);
+				}, 500);
+			});
+		});
+
+		mock.onGet('/caseData').reply(({ params }) => {
+			const url = '/ClassicCase';
+			let data = [
+				{
+					title: '郑州东区配送成功安装案例 [时尚家居]',
+					img: require('../Images/classicCase_con01.jpg'),
+					url
+				},
+				{
+					title: '新密花园项目配送安装成功案例 [时尚家居]',
+					img: require('../Images/classicCase_con02.jpg'),
+					url
+				},
+				{
+					title: '河南紫辰院项目产品配送安装成功案例 [时尚家居]',
+					img: require('../Images/classicCase_con03.jpg'),
+					url
+				},
+				{
+					title: '郑州航空港壹号项目产品配送安装成功案例 [时尚家居]',
+					img: require('../Images/classicCase_con04.jpg'),
+					url
+				},
+				{
+					title: '河南泛海国际配送安装成功案例[时尚家居]',
+					img: require('../Images/classicCase_con05.jpg'),
+					url
+				},
+				{
+					title: '新郑卓越前海壹号项目产品配送安装成功案例 [时尚家居]',
+					img: require('../Images/classicCase_con06.jpg'),
+					url
+				},
+				{
+					title: '郑州龙湖配送安装成功案例 [时尚家居]',
+					img: require('../Images/classicCase_con07.jpg'),
+					url
+				},
+				{
+					title: '南阳华侨城吨水岸二批安装成功案例 [时尚家居]',
+					img: require('../Images/classicCase_con08.jpg'),
+					url
+				},
+				{
+					title: '洛阳大华西郊别墅安装成功案例[时尚家居]',
+					img: require('../Images/classicCase_con09.jpg'),
+					url
+				},
+				{
+					title: '中牟万科如园配送安装成功案例 [时尚家居]',
+					img: require('../Images/classicCase_con10.jpg'),
+					url
+				},
+				{
+					title: '洛阳绿城香樟园别墅配送安装成功案例 [时尚家居]',
+					img: require('../Images/classicCase_con11.jpg'),
+					url
+				},
+				{
+					title: '开封东庭人家高档别墅配送安装成功案例 [时尚家居]',
+					img: require('../Images/classicCase_con12.jpg'),
+					url
+				}
+			];
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve([200, data]);
+				}, 500);
+			});
+		});
+
+		mock.onGet('/designersList').reply(({ params }) => {
+			let data = [
+				{
+					name: '张芳',
+					describe: '室内设计师 现代简约 新古典 后现代',
+					portrait: require('../Images/designer-img01.png'),
+					production: [
+						require('../Images/designer-img01-work01.jpg'),
+						require('../Images/designer-img01-work02.jpg')
+					],
+				},
+				{
+					name: '吴龙',
+					describe: '室内设计师 现代简约 新古典 后现代',
+					portrait: require('../Images/designer-img02.png'),
+					production: [
+						require('../Images/designer-img02-work01.jpg'),
+						require('../Images/designer-img02-work02.jpg')
+					],
+				},
+				{
+					name: '田雯',
+					describe: '室内设计师 现代简约 新古典 后现代',
+					portrait: require('../Images/designer-img03.png'),
+					production: [
+						require('../Images/designer-img03-work01.jpg'),
+						require('../Images/designer-img03-work02.jpg')
+					],
+				},
+				{
+					name: '李琐',
+					describe: '室内设计师 现代简约 新古典 后现代',
+					portrait: require('../Images/designer-img04.png'),
+					production: [
+						require('../Images/designer-img01-work01.jpg'),
+						require('../Images/designer-img01-work02.jpg')
+					],
+				},
+			];
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve([200, data]);
+				}, 500);
+			});
+		});
+
+		mock.onGet('/hotCompanyList').reply(({ params }) => {
+			let data = [
+				{
+					name: '大野国际装饰公司',
+					describe: '设计师5位 作品12个',
+					production: [
+						require('../Images/hot-design01.jpg'),
+						require('../Images/hot-design02.jpg')
+					],
+				},
+				{
+					name: '超越家居公司',
+					describe: '设计师4位 作品10个',
+					production: [
+						require('../Images/hot-design03.jpg'),
+						require('../Images/hot-design04.jpg')
+					],
+				},
+				{
+					name: '红星装饰公司',
+					describe: '设计师6位 作品13个',
+					production: [
+						require('../Images/hot-design05.jpg'),
+						require('../Images/hot-design06.jpg')
+					],
+				},
+				{
+					name: '超星家具公司',
+					describe: '设计师5位 作品11个',
+					production: [
+						require('../Images/hot-design01.jpg'),
+						require('../Images/hot-design02.jpg')
+					],
+				},
+			];
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve([200, data]);
+				}, 500);
+			});
+		});
+
+		mock.onGet('/hotWorkData').reply(({ params }) => {
+			const url = '/DesignCenter';
+			let data = [
+				{
+					name: '外滩九里',
+					author: '佚名',
+					url,
+					img: require('../Images/design_21.png')
+				},
+				{
+					name: '内外无界',
+					author: '佚名',
+					url,
+					img: require('../Images/design_24.png')
+				},
+				{
+					name: '云溪大宅',
+					author: '佚名',
+					url,
+					img: require('../Images/design_27.png')
+				},
+				{
+					name: '富春居',
+					author: '佚名',
+					url,
+					img: require('../Images/design_31.png')
+				},
+				{
+					name: '恒晟国际',
+					author: '佚名',
+					url,
+					img: require('../Images/design_32.png')
+				},
+				{
+					name: '不能忘记的家',
+					author: '佚名',
+					url,
+					img: require('../Images/design_33.png')
+				},
+			];
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve([200, data]);
+				}, 500);
+			});
+		});
+
+		mock.onGet('/celebrityBrandingList').reply(({ params }) => {
+			let data = [
+				{
+					name: 'Lineatre',
+					title: '卫浴届的劳斯莱斯Lineatre，如美人出浴',
+					describe: 'Lineatre，利奈德莱，成立于1983年，以其古典奢华风格享誉全球，被誉为卫浴领域的“劳斯莱斯”',
+					imgs: [
+						require('../Images/bornFree01.jpg'),
+						require('../Images/bornFree02.jpg')
+					],
+				},
+				{
+					name: 'Bruno Zampa',
+					title: '贴心品质是 Bruno Zampa的追求',
+					describe: 'Bruno Zampa保留材质、色彩的大致风格，仍然可以在细节处，很强烈地感受传统的历史开放、创新',
+					imgs: [
+						require('../Images/bornFree03.jpg'),
+						require('../Images/bornFree04.jpg')
+					],
+				},
+				{
+					name: 'Ceppi Style',
+					title: '难掩的皇家贵气 Ceppi Style值得人为之着迷',
+					describe: '迷恋手工制作，每一个细节都彰显工艺气息的国家来说，价格永远不是最重要的，最重要的是精雕细',
+					imgs: [
+						require('../Images/bornFree05.jpg'),
+						require('../Images/bornFree06.jpg')
+					],
+				},
+				{
+					name: 'Lineatre',
+					title: '卫浴届的劳斯莱斯Lineatre，如美人出浴',
+					describe: 'Lineatre，利奈德莱，成立于1983年，以其古典奢华风格享誉全球，被誉为卫浴领域的“劳斯莱斯”',
+					imgs: [
+						require('../Images/bornFree01.jpg'),
+						require('../Images/bornFree02.jpg')
+					],
+				}
+			];
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve([200, data]);
+				}, 500);
+			});
+		});
+
+		mock.onGet('/newsData').reply(({ params }) => {
+			const url = '/VideoInfo';
+			let data = {
+				leftTop: {
+					title: '时尚家居受邀参与第十一届河南省文化创意产业博览会。',
+					content: '本届文博会将紧紧围绕“创新、协调、绿色、开放、共享”的发展理念，以“激发文化活力，引领产业创新”为主题，全面展现我国优秀传统文化传承创新。',
+					img: require('../Images/video_09.png'),
+					url
+				},
+				leftBottom: {
+					title: '时尚家居成功举行“最美秋天”秋季旅游活动。',
+					content: '时尚家居一直秉承着“开心工作、快乐生活”的理念，此次旅游活动持续一周，员工们领略了秋季独有的美丽，丰富了员工生活。',
+					img: require('../Images/video_17.png'),
+					url
+				},
+				right: {
+					title: '时尚家居招商大会暨行业交流会议圆满落幕。',
+					content: '本次招商会议旨在让时尚家居品牌走出去，以企业的高品质产品和良好的业内口碑，扩大品牌的影响力，并通过行业交流，实现企业的创新，完善企业的理念。',
+					img: require('../Images/video_12.png'),
+					url
+				}
+			};
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve([200, data]);
+				}, 500);
+			});
+		});
+
+		mock.onGet('/videoList').reply(({ params }) => {
+			let data = [
+				{
+					title: '时尚家居丨品味',
+					img: require('../Video/video_Alchymia.jpg'),
+					video: require('../Video/video_Alchymia.mov')
+				},
+				{
+					title: '时尚家居丨探索',
+					img: require('../Video/video_Baxter2.jpg'),
+					video: require('../Video/video_Baxter2.mov')
+				},
+				{
+					title: '时尚家居丨品味',
+					img: require('../Video/video_GOLD.jpg'),
+					video: require('../Video/video_GOLD.mov')
+				},
+				{
+					title: '时尚家居丨尚居',
+					img: require('../Video/video_Alchymia.jpg'),
+					video: require('../Video/video_Alchymia.mov')
+				}
+			];
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve([200, data]);
 				}, 500);
 			});
 		});

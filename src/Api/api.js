@@ -31,3 +31,31 @@ export const getSortingList = () => {
 export const getSofaData = params => {
 	return axios.get(`${baseUrl}/sofaData`, { params });
 };
+
+export const getCaseData = () => {
+	return axios.get(`${baseUrl}/caseData`);
+};
+
+export const getDesignerList = () => {
+	return axios.get(`${baseUrl}/designersList`);
+};
+
+export const getHotCompanyList = () => {
+	return axios.get(`${baseUrl}/hotCompanyList`);
+};
+
+export const getHotWorkData = () => {
+	return axios.get(`${baseUrl}/hotWorkData`);
+};
+
+export const getCelebrityBrandingList = () => {
+	return axios.get(`${baseUrl}/celebrityBrandingList`);
+};
+
+export const getNewsData = () => {
+	return axios.get(`${baseUrl}/newsData`);
+};
+
+export const getVideoList = () => {
+	return axios.get(`${baseUrl}/videoList`);
+};

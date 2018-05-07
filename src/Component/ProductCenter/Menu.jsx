@@ -1,8 +1,13 @@
+//基础模块
 import React, { Component } from 'react';
 import { fromJS, is } from 'immutable';
-import { getMenuList } from '../../Api/api';
 
+//API
+import { getMenuList } from 'Api';
+
+//样式
 import './Style/Menu.css';
+
 
 class Menu extends Component {
 	constructor (props) {
@@ -17,11 +22,11 @@ class Menu extends Component {
 		this.tabClick = index => {
 			this.setState({ index, name: this.state.list[index].title });
 		};
-	}
+	};
 
-	shouldComponentUpdate(nextProps, nextState) {
+	shouldComponentUpdate (nextProps, nextState) {
 		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
-	}
+	};
 
 	componentWillMount () {
 		getMenuList().then(({ data }) => {
@@ -29,11 +34,11 @@ class Menu extends Component {
 		}, error => {
 			console.log(error);
 		});
-	}
+	};
 
 	render () {
 		return (
-			<div className="product-menu wrapper">
+			<div className="product-menu">
 				<div className="product-menu-left">
 					<div className="product-menu-left-title">产品分类</div>
 					<div className="product-menu-left-container">
@@ -89,7 +94,7 @@ class Menu extends Component {
 				</div>
 			</div>
 		);
-	}
+	};
 };
 
 class MenuRightColumn extends Component {
@@ -98,11 +103,11 @@ class MenuRightColumn extends Component {
 		this.state = {
 			index: 0
 		};
-	}
+	};
 
-	shouldComponentUpdate(nextProps, nextState) {
+	shouldComponentUpdate (nextProps, nextState) {
 		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
-	}
+	};
 
 	render () {
 		return (
@@ -123,7 +128,7 @@ class MenuRightColumn extends Component {
 				</ul>
 			</div>
 		);
-	}
+	};
 };
 
 export default Menu;

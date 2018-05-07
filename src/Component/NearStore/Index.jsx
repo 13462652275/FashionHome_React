@@ -1,30 +1,32 @@
+//基础模块
 import React, { Component } from 'react';
-import { fromJS, is } from 'immutable';
-import { changeIndex } from '../../Redux/Action/Action';
-import { dispatch } from '../../Redux/Store/Store';
 
-const style = {
-	h3: {
-		fontSize: 24,
-		padding: '200px 0'
-	}
-};
+//第三方模块
+import { fromJS, is } from 'immutable';
+
+//高阶组件
+import updateIndex from 'HOC/updateIndex';
+
+//公共组件
+import HeaderBanner from 'Common/HeaderBanner';
+
+//组件
+// import  from '';
+
+
 
 class Index extends Component {
-	componentWillMount () {
-		dispatch(changeIndex(this.props.index));
-		this.props.setIndex();
-	}
-
-	shouldComponentUpdate(nextProps, nextState) {
-		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state),fromJS(nextState))
-	}
+	shouldComponentUpdate (nextProps, nextState) {
+		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
+	};
 
 	render () {
 		return (
-			<h3 style={style.h3}>{this.props.title}</h3>
+			<section className="near-store content">
+				<HeaderBanner title="附近店面" text="NEAR THE STORE" src={ require('../../Images/near-store-banner.jpg') }/>
+			</section>
 		);
-	}
+	};
 };
 
-export default Index;
+export default updateIndex(Index);

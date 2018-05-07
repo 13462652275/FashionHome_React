@@ -1,11 +1,16 @@
+//基础模块
 import React, { Component } from 'react';
-import { fromJS, is } from 'immutable';
 import { Link } from 'react-router-dom';
 
+//第三方模块
+import { fromJS, is } from 'immutable';
+
+//样式
 import './Style/ServiceSupport.css';
 
+
 class ServiceSupport extends Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			indexServiceList: [
@@ -40,12 +45,12 @@ class ServiceSupport extends Component {
 					text: 'Fanshion Home欢迎您的加盟'
 				}
 			]
-		}
-	}
+		};
+	};
 
-	shouldComponentUpdate(nextProps, nextState) {
+	shouldComponentUpdate (nextProps, nextState) {
 		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
-	}
+	};
 
 	render () {
 		return (
@@ -68,7 +73,7 @@ class ServiceSupport extends Component {
 				</div>
 			</div>
 		);
-	}
+	};
 };
 
 export default ServiceSupport;

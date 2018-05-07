@@ -1,0 +1,84 @@
+header {
+	position: relative;
+	overflow: hidden;
+}
+
+.logo {
+	display: block;
+	width: 135px;
+	height: 69px;
+	margin: 10px auto;
+}
+
+.logo a {
+	display: block;
+	height: 100%;
+	background-image: url('../../../../Images/logo.png');
+	text-indent: -9999px;
+}
+
+.header-search {
+	width: 195px;
+	height: 20px;
+	background-image: url('../../../../Images/com_sprite.png');
+	background-repeat: no-repeat;
+	background-position: 0 -63px;
+	padding: 9px 20px;
+	position: absolute;
+	top: 20px;
+	right: 0;
+}
+
+.header-search input[type='text'] {
+	height: 20px;
+	color: #888888;
+	border: 0 none;
+	outline: 0 none;
+	float: left;
+}
+
+.header-search input[type='submit'] {
+	width: 22px;
+	height: 22px;
+	border: 0 none;
+	outline: 0 none;
+	cursor: pointer;
+	background-image: url('../../../../Images/com_sprite.png');
+	background-color: transparent;
+	background-position: -38px -4px;
+	float: right;
+}
+
+
+
+/* 小屏幕 */
+@media (max-width: 1200px) {
+	.container header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 67px;
+		height: 34px;
+		margin: 0;
+		z-index: 100;
+	}
+
+	.logo {
+		float: left;
+		width: 67px;
+		height: 34px;
+		margin: 2px 0 0 0;
+		position: relative;
+		z-index: 100;
+	}
+
+	.logo a {
+		background-size: 100% 100%;
+		background-position: center 10px;
+		background-repeat: no-repeat;
+	}
+	
+	.header-search {
+		display: none;
+	}
+}

@@ -1,0 +1,25 @@
+/* 大屏幕 */
+.video-info-title {
+	color: #333;
+	font-size: 26px;
+	font-weight: normal;
+	margin: 70px 0 30px 0;
+}
+
+.video-info-title span {
+	font-size: 14px;
+}
+
+
+/* 小屏幕 */
+@media (max-width: 1200px) {
+	.video-info-title {
+		font-size: 18px;
+		margin: 10px 0;
+		padding: 0 5%;
+	}
+
+	.video-info-title span {
+		font-size: 12px;
+	}
+}

@@ -1,0 +1,29 @@
+body,
+.container {
+	overflow-x: hidden;
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+*::selection {
+	color: #fff;
+	background-color: #77c111;
+}
+
+
+/* 小屏幕 */
+@media (max-width: 1200px) {
+	.content {
+		margin-top: 46px;
+	}
+}
+
+/* 手机屏幕 */
+@media (max-width: 768px) {
+	.container {
+		width: 100%;
+	}
+}

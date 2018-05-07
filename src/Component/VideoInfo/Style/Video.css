@@ -1,0 +1,135 @@
+/* 大屏幕 */
+.video-info-play {
+	overflow: hidden;
+	margin-bottom: 10%;
+}
+
+.video-info-play-view {
+	float: left;
+	width: 850px;
+	height: 600px;
+}
+
+.video-info-play-view > video {
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.video-info-play-list {
+	float: right;
+	width: 314px;
+	height: 600px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.video-info-play-list > li {
+	width: 278px;
+	height: 198px;
+	border: 1px solid transparent;
+	float: left;
+	margin: 0 0 8px 14px;
+	position: relative;
+	cursor: pointer;
+}
+
+.video-info-play-list > .video-info-play-active {
+	border: 1px solid #77c111;
+}
+
+.video-info-play-active:after {
+	content: '';
+	border-top: 9px solid transparent;
+	border-bottom: 9px solid transparent;
+	border-left: 7px solid transparent;
+	border-right: 7px solid #77c111;
+	position: absolute;
+	top: 50%;
+	margin: -8px 0 0 0;
+	left: -14px;
+}
+
+.video-info-play-list img {
+	width: 100%;
+	height: 100%;
+}
+
+.video-info-play-item-title {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .4);
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	line-height: 198px;
+}
+
+
+/* 小屏幕 */
+@media (max-width: 1200px) {
+	.video-info-play-view {
+		width: 80%;
+		height: 0;
+		float: none;
+		margin: 0 auto 3% auto;
+		padding-bottom: 44.8%;
+		position: relative;
+	}
+
+	.video-info-play-view > video {
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+
+	.video-info-play-swiper {
+		width: 80%;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+
+	.video-info-play-list {
+		float: none;
+		white-space: nowrap;
+		width: auto;
+		height: auto;
+		overflow: hidden;
+	}
+
+	.video-info-play-list > li {
+		border: 1px solid transparent;
+		float: none;
+		display: inline-block;
+		margin: 14px 8px 0 0;
+	}
+
+	.video-info-play-active:after {
+		content: '';
+		border-top: 7px solid transparent;
+		border-bottom: 7px solid #77c111;
+		border-left: 9px solid transparent;
+		border-right: 9px solid transparent;
+		position: absolute;
+		top: -14px;
+		margin: 0 0 0 -8px;
+		left: 50%;
+	}
+}
+
+
+/* 手机屏幕 */
+@media (max-width: 768px) {
+	.video-info-play-list > li {
+		width: 40vw;
+		height: auto;
+	}
+
+	.video-info-play-item-title {
+		font-size: 12px;
+		line-height: 6;
+	}
+}

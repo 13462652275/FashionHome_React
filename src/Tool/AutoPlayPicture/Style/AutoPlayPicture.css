@@ -1,0 +1,26 @@
+/* 大屏幕 */
+.auto-play-picture {
+	overflow: hidden;
+	position: relative;
+	height: 0;
+}
+
+.auto-play-picture > img {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity .5s;
+}
+
+/* 小屏幕 */
+@media (max-width: 1200px) {
+	
+}
+
+
+/* 手机屏幕 */
+@media (max-width: 768px) {
+	
+}

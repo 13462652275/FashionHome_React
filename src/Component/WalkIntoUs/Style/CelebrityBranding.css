@@ -1,0 +1,79 @@
+/* 大屏幕 */
+.celebrity-branding-list {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.celebrity-branding-item {
+	display: inline-block;
+	width: 358px;
+	border: 1px solid #ccc;
+	margin-right: 60px;
+}
+
+.celebrity-branding-item h3 {
+	color: #77c111;
+	font-size: 24px;
+	font-weight: normal;
+	text-align: center;
+	line-height: 55px;
+}
+
+.celebrity-branding-item p {
+	text-align: center;
+	white-space: normal;
+	word-wrap: break-word;
+	padding: 0 20px;
+}
+
+.celebrity-branding-item-title {
+	color: #333;
+	font-size: 14px;
+	margin: 20px 0;
+}
+
+.celebrity-branding-item-describe {
+	color: #595959;
+	line-height: 26px;
+}
+
+.celebrity-branding-item-attention {
+	color: #333;
+	font-size: 14px;
+	text-align: center;
+	display: block;
+	margin: 20px auto 40px auto;
+	width: 158px;
+	height: 38px;
+	line-height: 36px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.celebrity-branding-item-attention .iconfont {
+	color: #77c111;
+	font-size: 20px;
+	margin-right: 10px;
+	vertical-align: top;
+}
+
+
+/* 小屏幕 */
+@media (max-width: 1200px) {
+	.celebrity-branding-item {
+		display: block;
+		width: 50%;
+		margin: 30px auto;
+	}
+}
+
+
+/* 手机屏幕 */
+@media (max-width: 768px) {
+	.celebrity-branding-item {
+		display: block;
+		width: 70%;
+		margin: 30px auto;
+	}
+}

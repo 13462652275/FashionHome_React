@@ -1,15 +1,26 @@
+//基础模块
 import React, { Component } from 'react';
+
+//第三方模块
 import { fromJS, is } from 'immutable';
-import { changeIndex } from '../../Redux/Action/Action';
-import { dispatch } from '../../Redux/Store/Store';
-import { getSortingList, getSofaData } from '../../Api/api';
 
+//API
+import { getSortingList, getSofaData } from 'Api';
 
+//高阶组件
+import updateIndex from 'HOC/updateIndex';
+
+//工具组件
+import Page from 'Tool/Page';
+
+//公共组件
 import HeaderBanner from '../Common/HeaderBanner';
+
+//组件
 import Menu from './Menu';
 import Sorting from './Sorting';
 import SofaList from './SofaList';
-import Page from '../Common/Page';
+
 
 class Index extends Component {
 	constructor (props) {
@@ -26,12 +37,9 @@ class Index extends Component {
 				console.log(error, 20);
 			});
 		};
-	}
+	};
 
 	componentWillMount () {
-		dispatch(changeIndex(this.props.index));
-		this.props.setIndex();
-
 		getSortingList().then(({ data }) => {
 			this.setState({ sortingList: data });
 		}, error => {
@@ -39,29 +47,25 @@ class Index extends Component {
 		});
 
 		this.requestSofaData();
-	}
+	};
 
-	shouldComponentUpdate(nextProps, nextState) {
-		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state),fromJS(nextState))
-	}
+	shouldComponentUpdate (nextProps, nextState) {
+		return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState));
+	};
 
 	render () {
 		return (
-			<div className="product-center content">
-				<HeaderBanner 
-					src={require('../../Images/pro_banner.jpg')} 
-					title="产品中心" 
-					text="PRODUCT CENTER"
-					></HeaderBanner>
-				<Menu></Menu>
-				<Sorting data={this.state.sortingList} requestSofaData={this.requestSofaData}></Sorting>
-				<SofaList data={this.state.sofaData}></SofaList>
+			<section className="product-center content">
+				<HeaderBanner src={ require('../../Images/pro_banner.jpg') } title="产品中心" text="PRODUCT CENTER"/>
 				<div className="wrapper">
-					<Page></Page>
+					<Menu />
+					<Sorting data={ this.state.sortingList } requestSofaData={ this.requestSofaData }/>
+					<SofaList data={ this.state.sofaData }/>
+					<Page pageSize={ 10 } total={ 100 } style={{ marginBottom: 30 }}></Page>
 				</div>
-			</div>
+			</section>
 		);
-	}
+	};
 };
 
-export default Index;
+export default updateIndex(Index);

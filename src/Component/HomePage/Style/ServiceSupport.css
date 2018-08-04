@@ -1,12 +1,15 @@
+/* 电脑等等设备屏幕 */
 .index-service-content {
 	overflow: hidden;
 }
+
 .index-service-item-box {
 	width: 33.3%;
 	float: left;
 	margin: 80px 0 50px;
 	text-align: center;
 }
+
 .index-service-item-box a {
 	display: block;
 	width: 122px;
@@ -17,15 +20,18 @@
 	color: #c0c4c0;
 	transition: all 0.7s;
 }
+
 .index-service-item-box span {
 	font-size: 75px;
 	line-height: 122px;
 }
+
 .index-service-item-box h6 {
 	color: #333;
 	font-size: 28px;
 	margin-top: 28px;
 }
+
 .index-service-item-box p {
 	width: 324px;
 	height: 60px;
@@ -34,41 +40,50 @@
 	font-size: 14px;
 	line-height: 30px;
 }
+
 .index-service-item-box a:hover {
 	color: #fff;
 	background-color: #77c111;
 	border-color: #77c111;
 }
 
-/* 小屏幕 */
+
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
 	.index-service-item-box {
 		width: 50%;
 	}
+
 	.index-service-item-box p {
 		width: 80%;
 	}
+
 }
 
-/* 手机屏幕 */
-@media (max-width: 768px) {
+
+/* 手机等设备屏幕 */
+@media (max-width: 767px) {
 	.index-service-item-box {
 		width: 100%;
 		margin: 40px 0 25px;
 	}
+
 	.index-service-item-box a {
-		width: 61px;
-		height: 61px;
+		width: 96px;
+		height: 96px;
 		border: 2px solid #c0c4c0;
 	}
+
 	.index-service-item-box span {
-		font-size: 32px;
-		line-height: 61px;
+		font-size: 48px;
+		line-height: 96px;
 	}
+
 	.index-service-item-box h6 {
 		font-size: 18px;
 		margin-top: 10px;
 	}
+
 	.index-service-item-box p {
 		margin: 10px auto 0;
 		font-size: 12px;

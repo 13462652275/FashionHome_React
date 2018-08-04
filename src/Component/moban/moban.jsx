@@ -8,9 +8,6 @@ import { fromJS, is } from 'immutable';
 //API
 import {  } from 'Api';
 
-//样式
-import './Style/';
-
 //高阶组件
 import  from 'HOC/';
 
@@ -22,6 +19,9 @@ import  from 'Common/';
 
 //组件
 import  from '';
+
+//样式
+import './Style/';
 
 
 class moban extends Component {

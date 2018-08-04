@@ -1,3 +1,4 @@
+/* 电脑等等设备屏幕 */
 .banner-info {
 	width: 60%;
 	height: 358px;
@@ -9,6 +10,7 @@
 	margin-top: -179px;
 	animation: show 2s ease-out forwards;
 }
+
 .banner_explain {
 	color: #fff;
 	font-size: 18px;
@@ -16,11 +18,13 @@
 	margin-top: 40px;
 	margin-bottom: 10px;
 }
+
 .banner_explain span {
 	color: #fff;
 	font-size: 20px;
 	font-family: "Gabriola";
 }
+
 .details {
 	width: 20%;
 	color: #fff;
@@ -32,9 +36,11 @@
 	display: block;
 	transition: background-color 0.3s;
 }
+
 .details:hover {
 	background-color: rgba(119, 193, 17, .6);
 }
+
 .index-title {
 	width: 1200px;
 	margin: 100px auto 0;
@@ -47,16 +53,18 @@
 	font-size: 32px;
 	text-align: center;
 }
+
 .index-title p {
 	color: #595959;
 	font-size: 14px;
 }
+
 .banner-info-phone {
 	display: none;
 }
 
 
-/* 小屏幕 */
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
 	.banner-info {
 		width: 98%;
@@ -67,9 +75,11 @@
 		margin: 20px auto 0;
 		padding: 1%;
 	}
+
 	.banner-info-logo {
 		width: 20%;
 	}
+
 	.banner_explain {
 		color: #333;
 		font-size: 13px;
@@ -77,13 +87,16 @@
 		margin-top: 10px;
 		margin-bottom: 10px;
 	}
+
 	.banner_explain span {
 		color: #333;
 		font-size: 12px;
 	}
+
 	.banner-info-divider {
 		display: none;
 	}
+
 	.details {
 		width: 40%;
 		color: #fff;
@@ -94,9 +107,11 @@
 		line-height: 30px;
 		margin: 30px auto 0;
 	}
+
 	.details:hover {
 		background-color: #77c111;
 	}
+
 	.index-title {
 		width: 100%;
 		background-size: 80px;
@@ -104,19 +119,23 @@
 		font-size: 22px;
 		margin-top: 0;
 	}
+
 	.index-title p {
 		font-size: 12px;
 	}
+
 	.banner-info-pc {
 		display: none;
 	}
+
 	.banner-info-phone {
 		display: block;
 		overflow: hidden;
 	}
 }
 
-/* 小屏幕 */
+
+/* 手机等设备屏幕 */
 @media (max-width: 768px) {
 	.banner-info-logo {
 		width: 30%;

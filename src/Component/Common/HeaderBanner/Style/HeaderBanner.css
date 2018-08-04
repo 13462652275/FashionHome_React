@@ -1,3 +1,4 @@
+/* 电脑等等设备屏幕 */
 .header-banner {
 	overflow: hidden;
 	position: relative;
@@ -25,18 +26,22 @@
 	from {
 		opacity: 0;
 	}
+
 	to {
 		opacity: 1;
 	}
 }
 
-/* 小屏幕 */
+
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
 	.header-banner-title {
 		font-size: 3vw;
 	}
 }
 
+
+/* 手机等设备屏幕 */
 @media (max-width: 768px) {
 	.header-banner img {
 		width: 150%;

@@ -14,21 +14,24 @@
 	display: block;
 	width: 90px;
 	height: 90px;
+	border-radius: 50%;
 	margin: 0 auto;
-	color: #c0c4c0;
+	color: #77c111;
 	font-size: 50px;
 	text-align: center;
 	position: relative;
+	overflow: hidden;
 }
 
 .contact-us-service-item-circle {
 	width: 84px;
 	height: 84px;
-	border: 3px solid #c0c4c0;
+	border: 3px solid #77c111;
 	border-radius: 50%;
 	position: absolute;
 	top: 0;
 	left: 0;
+	transition: background-color .5s;
 }
 
 .contact-us-service-item-circle-left,
@@ -36,9 +39,8 @@
 	width: 50%;
 	height: 0%;
 	background-color: #fff;
-	transition: height 1s;
 	position: absolute;
-	animation: height 1s;
+	animation: height .7s;
 }
 
 .contact-us-service-item-circle-left {
@@ -54,7 +56,18 @@
 .contact-us-service-item-iconfont {
 	line-height: 84px;
 	position: relative;
+	left: 0%;
+	transition: color .5s;
+	animation: left .7s;
 	z-index: 100;
+}
+
+.contact-us-service-item-icon:hover .contact-us-service-item-circle {
+	background-color: #77c111;
+}
+
+.contact-us-service-item-icon:hover .contact-us-service-item-iconfont {
+	color: #fff;
 }
 
 .contact-us-service-item-title {
@@ -72,6 +85,16 @@
 	animation: scale 1s;
 }
 
+
+@keyframes left {
+	from {
+		left: -100%;
+	}
+
+	to {
+		left: 0%;
+	}
+}
 
 @keyframes height {
 	from {

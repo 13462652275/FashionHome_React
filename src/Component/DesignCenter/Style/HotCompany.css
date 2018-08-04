@@ -1,4 +1,4 @@
-/* 大屏幕 */
+/* 电脑等等设备屏幕 */
 .hot-company-list {
 	overflow: hidden;
 	white-space: nowrap;
@@ -40,8 +40,8 @@
 }
 
 
-/* 手机屏幕 */
-@media (max-width: 768px) {
+/* 手机等设备屏幕 */
+@media (max-width: 767px) {
 	.hot-company-item {
 		display: block;
 		width: 70%;

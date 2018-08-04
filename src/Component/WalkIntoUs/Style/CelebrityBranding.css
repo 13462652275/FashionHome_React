@@ -1,4 +1,4 @@
-/* 大屏幕 */
+/* 电脑等等设备屏幕 */
 .celebrity-branding-list {
 	overflow: hidden;
 	white-space: nowrap;
@@ -59,18 +59,8 @@
 }
 
 
-/* 小屏幕 */
-@media (max-width: 1200px) {
-	.celebrity-branding-item {
-		display: block;
-		width: 50%;
-		margin: 30px auto;
-	}
-}
-
-
-/* 手机屏幕 */
-@media (max-width: 768px) {
+/* 手机等设备屏幕 */
+@media (max-width: 767px) {
 	.celebrity-branding-item {
 		display: block;
 		width: 70%;

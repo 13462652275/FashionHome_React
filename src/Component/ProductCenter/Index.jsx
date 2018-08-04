@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 
 //第三方模块
 import { fromJS, is } from 'immutable';
+import { one } from 'Redux/Action/Action';
+import { dispatch } from 'Redux/Store/Store';
 
 //API
 import { getSortingList, getSofaData } from 'Api';
@@ -40,6 +42,9 @@ class Index extends Component {
 	};
 
 	componentWillMount () {
+		dispatch(one(10));
+		// this.props.setIndex();
+
 		getSortingList().then(({ data }) => {
 			this.setState({ sortingList: data });
 		}, error => {

@@ -1,3 +1,4 @@
+/* 电脑等等设备屏幕 */
 header {
 	position: relative;
 	overflow: hidden;
@@ -51,7 +52,7 @@ header {
 
 
 
-/* 小屏幕 */
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
 	.container header {
 		position: fixed;

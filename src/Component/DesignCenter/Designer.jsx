@@ -39,14 +39,20 @@ class Designer extends Component {
 	};
 
 	render () {
-		let start = true;
-		if (window.innerWidth <= 768) start = false;
+		let [ width, slideView, start ] = [ window.innerWidth, 3, true ];
+		if (width <= 1200 && width >= 1024) {
+			slideView = 2;
+		} else if (width <= 1024 && width >= 768) {
+			slideView = 1;
+		};
+
+		if (width <= 767) start = false;
 
 		return (
 			<div className="designer">
 				{ this.props.children }
 				<IsLoadOver isLoadOver={ this.state.data.length }>
-					<SlideList slideView={ 3 } slideNumber={ this.state.data.length } slideWidth={ 400 } ifStart={ start }>
+					<SlideList className="slide-list-ipad" slideView={ slideView } slideNumber={ this.state.data.length } slideWidth={ 420 } ifStart={ start }>
 						<div className="designer-list">
 							{ this.state.data.map((item, i) => <DesignerItem data={ item } key={ i }/>) }
 						</div>

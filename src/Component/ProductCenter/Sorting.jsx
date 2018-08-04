@@ -8,10 +8,6 @@ import { fromJS, is } from 'immutable';
 //样式
 import './Style/Sorting.css';
 
-//工具组件
-import MenuSwiper from 'Tool/MenuSwiper';
-import IsLoadOver from 'Tool/IsLoadOver';
-
 
 class Sorting extends Component {
 	static propTypes = {
@@ -36,23 +32,19 @@ class Sorting extends Component {
 	render () {
 		return (
 			<div className="product-sorting">
-				<IsLoadOver isLoadOver={ this.props.data.length }>
-					<MenuSwiper>
-						<ul className="product-sorting-list" >
-							<li> 排序分类：</li>
-							{
-								this.props.data.map((item, i) => (
-									<li key={i}>
-										<span 
-											style={{color: this.state.index === i ? '#77c111' : '#333'}}
-											onClick={this.selected.bind(this, i, item)}
-											>{item}</span>
-									</li>
-								))
-							}
-						</ul>
-					</MenuSwiper>
-				</IsLoadOver>
+				<b> 排序分类：</b>
+				<ul className="product-sorting-list" >
+					{
+						this.props.data.map((item, i) => (
+							<li key={ i }>
+								<span 
+									style={{ color: this.state.index === i ? '#77c111' : '#333' }}
+									onClick={ this.selected.bind(this, i, item) }
+									>{ item }</span>
+							</li>
+						))
+					}
+				</ul>
 			</div>
 		);
 	};

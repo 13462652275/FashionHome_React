@@ -1,4 +1,4 @@
-/* 大屏幕 */
+/* 电脑等等设备屏幕 */
 .hot-work-list {
 	overflow: hidden;
 }
@@ -59,35 +59,39 @@
 }
 
 
-/* 小屏幕 */
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
-	
-}
+	.hot-work-list {
+		width: 90%;
+		margin: 0 auto;
+	}
 
-
-/* 手机屏幕 */
-@media (max-width: 768px) {
 	.hot-work-item {
-		float: none;
-		width: 80%;
+		width: 48%;
 		height: auto;
-		margin: 0 auto 30px auto;
+		margin-right: 4%;
 	}
 
 	.hot-work-list .hot-work-item:nth-child(3n + 3) {
+		margin-right: 4%;
+	}
+
+	.hot-work-list .hot-work-item:nth-child(2n) {
 		margin-right: auto;
 	}
 
 	.hot-work-item-detail {
 		width: 90%;
-		height: 10vw;
+		height: 32px;
 		padding: 0 5%;
-		line-height: 10vw;
+		line-height: 32px;
+		top: auto;
+		bottom: 0;
 	}
 
 	.hot-work-item-detail p {
 		float: left;
-		line-height: 10vw;
+		line-height: 32px;
 	}
 
 	.hot-work-item-detail span {
@@ -97,11 +101,26 @@
 	}
 
 	.hot-work-item:hover .hot-work-item-detail {
-		top: 85%;
+		top: auto;
+		bottom: 0;
 		padding-top: 0;
 	}
 
 	.hot-work-item:hover .hot-work-item-detail p {
 		font-size: 16px;
+	}
+}
+
+
+/* 手机等设备屏幕 */
+@media (max-width: 767px) {
+	.hot-work-item {
+		float: none;
+		width: 80%;
+		margin: 0 auto 10% auto;
+	}
+
+	.hot-work-list .hot-work-item:nth-child(3n + 3) {
+		margin-right: auto;
 	}
 }

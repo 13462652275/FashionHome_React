@@ -47,14 +47,14 @@ class Menu extends Component {
 								this.state.list.map((item, i) => {
 									return (
 										<li 
-											className={this.state.index === i ? 'avtive-nav' : ''}
-											onClick={this.tabClick.bind(this, i)} 
-											key={i}>
+											className={ this.state.index === i ? 'avtive-nav' : '' }
+											onClick={ this.tabClick.bind(this, i) } 
+											key={ i }>
 											<i 
 												className="iconfont" 
-												style={{color: this.state.index === i ? '#fff' : '#77c111'}}
-												dangerouslySetInnerHTML={{__html: this.state.iconCodes[i]}}></i>
-											<span style={{color: this.state.index === i ? '#fff' : '#404040'}}>{item.title}</span>
+												style={{ color: this.state.index === i ? '#fff' : '#77c111' }}
+												dangerouslySetInnerHTML={{ __html: this.state.iconCodes[i] }}></i>
+											<span style={{ color: this.state.index === i ? '#fff' : '#404040' }}>{ item.title }</span>
 										</li>
 									);
 								})
@@ -62,12 +62,12 @@ class Menu extends Component {
 						</ul>
 						<div 
 							className="product-menu-left-arrow"
-							style={{top: this.state.index * 52}}></div>
+							style={{ top: this.state.index * 52 }}></div>
 					</div>
 				</div>
 				<div className="product-menu-right">
 					<div className="product-menu-right-top">
-						<b className="product-menu-right-title">{this.state.name}</b>
+						<b className="product-menu-right-title">{ this.state.name }</b>
 						<div className="product-menu-right-search">
 							<input type="text" placeholder="搜索..."/>
 							<button></button>
@@ -78,12 +78,12 @@ class Menu extends Component {
 							return (
 								<div 
 									className="product-menu-right-container"
-									style={{display: this.state.index === i ? 'block' : 'none'}}
-									key={i}>
+									style={{ display: this.state.index === i ? 'block' : 'none' }}
+									key={ i }>
 									{
 										tab.columns.map((column, j) => {
 											return (
-												<MenuRightColumn column={column} key={j} />
+												<MenuRightColumn column={ column } key={ j } />
 											);
 										})
 									}
@@ -112,15 +112,15 @@ class MenuRightColumn extends Component {
 	render () {
 		return (
 			<div className="product-menu-right-columns">
-				<b className="product-menu-right-title">{this.props.column.name}</b>
+				<b className="product-menu-right-title">{ this.props.column.name }</b>
 				<ul className="product-menu-right-list">
 					{
 						this.props.column.list.map((item, i) => {
 							return (
-								<li key={i}>
+								<li key={ i }>
 									<span 
-										style={{borderColor: this.state.index === i ? '#77c111' : 'transparent'}}
-										onClick={() => {this.setState({index: i})}}>{item}</span>
+										style={{ borderColor: this.state.index === i ? '#77c111' : 'transparent' }}
+										onClick={() => { this.setState({index: i}) }}>{ item }</span>
 								</li>
 							);
 						})

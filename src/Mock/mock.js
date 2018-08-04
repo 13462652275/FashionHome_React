@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'Api';
 import MockAdapter from 'axios-mock-adapter';
 
 export default {

@@ -1,0 +1,18 @@
+/* 电脑等等设备屏幕 */
+#map {
+	width: 600px;
+	height: 500px;
+	margin: 0 auto;
+}
+
+
+/* iPad等移动设备屏幕 */
+@media (max-width: 1200px) {
+	
+}
+
+
+/* 手机等设备屏幕 */
+@media (max-width: 767px) {
+	
+}

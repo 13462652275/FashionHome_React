@@ -1,4 +1,4 @@
-/* 大屏幕 */
+/* 电脑等等设备屏幕 */
 .slide-list {
 	position: relative;
 }
@@ -31,13 +31,14 @@
 	right: -90px;
 }
 
-/* 小屏幕 */
+
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
 	
 }
 
 
-/* 手机屏幕 */
+/* 手机等设备屏幕 */
 @media (max-width: 768px) {
 	
 }

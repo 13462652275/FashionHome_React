@@ -7,7 +7,7 @@ import updateIndex from 'HOC/updateIndex';
 
 //公共组件
 import HeaderBanner from 'Common/HeaderBanner';
-import Title from 'Common/Tilte';
+import Title from 'Common/Title';
 
 //工具组件
 import Page from 'Tool/Page';

@@ -1,3 +1,4 @@
+/* 电脑等等设备屏幕 */
 .index-design-bg {
 	width: 1920px;
 	margin-top: 94px;
@@ -9,6 +10,7 @@
 	background-image: url('../../../Images/index_design_bg.jpg');
 	background-repeat: no-repeat;
 }
+
 .index-design-video {
 	width: 1024px;
 	display: block;
@@ -16,7 +18,7 @@
 }
 
 
-/* 小屏幕 */
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
 	.index-design-bg {
 		width: 100%;
@@ -27,7 +29,9 @@
 		background-size: 200%;
 	}
 }
-/* 小屏幕 */
+
+
+/* 手机等设备屏幕 */
 @media (max-width: 1024px) {
 	.index-design-video {
 		width: 80%;

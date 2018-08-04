@@ -1,4 +1,4 @@
-/* 大屏幕 */
+/* 电脑等等设备屏幕 */
 .video-info-news {
 	overflow: hidden;
 }
@@ -81,7 +81,7 @@
 }
 
 
-/* 小屏幕 */
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
 	.video-info-news-left,
 	.video-info-news-right {

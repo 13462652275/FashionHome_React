@@ -2,29 +2,75 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+
+//第三方模块
 import { fromJS, is } from 'immutable';
-// import { dispatch, getState } from '../Redux/Store/Store';
+import Loadable from 'react-loadable';
+
+//工具组件
+import IsClickOutside from 'Tool/IsClickOutside';
+import Icon from 'Tool/Icon';
+
+//公共组件
+import Header from 'Common/Header';
+import Footer from 'Common/Footer';
 
 //样式
 import './Style/Router.css';
 
-//工具组件
-import IsClickOutside from '../Tool/IsClickOutside';
-import Icon from '../Tool/Icon';
-
-//公共组件
-import Header from '../Component/Common/Header';
-import Footer from '../Component/Common/Footer';
-
 //导航组件
-import Index from '../Component/HomePage';
-import ProductCenter from '../Component/ProductCenter';
-import ClassicCase from '../Component/ClassicCase';
-import DesignCenter from '../Component/DesignCenter';
-import WalkIntoUs from '../Component/WalkIntoUs';
-import VideoInfo from '../Component/VideoInfo';
-import ContactUs from '../Component/ContactUs';
-import NearStore from '../Component/NearStore';
+// import Index from '../Component/HomePage';
+// import ProductCenter from '../Component/ProductCenter';
+// import ClassicCase from '../Component/ClassicCase';
+// import DesignCenter from '../Component/DesignCenter';
+// import WalkIntoUs from '../Component/WalkIntoUs';
+// import VideoInfo from '../Component/VideoInfo';
+// import ContactUs from '../Component/ContactUs';
+// import NearStore from '../Component/NearStore';
+
+const loading = () => <div>Loading...</div>;
+
+const Index = Loadable({
+	loader: () => import('../Component/HomePage'),
+	loading,
+	timeout: 10000
+});
+
+const ProductCenter = Loadable({
+	loader: () => import('../Component/ProductCenter'),
+	loading,
+	timeout: 10000
+});
+
+const ClassicCase = Loadable({
+	loader: () => import('../Component/ClassicCase'),
+	loading,
+});
+
+const DesignCenter = Loadable({
+	loader: () => import('../Component/DesignCenter'),
+	loading,
+});
+
+const WalkIntoUs = Loadable({
+	loader: () => import('../Component/WalkIntoUs'),
+	loading,
+});
+
+const VideoInfo = Loadable({
+	loader: () => import('../Component/VideoInfo'),
+	loading,
+});
+
+const ContactUs = Loadable({
+	loader: () => import('../Component/ContactUs'),
+	loading,
+});
+
+const NearStore = Loadable({
+	loader: () => import('../Component/NearStore'),
+	loading,
+});
 
 
 class RouteConfig extends Component {

@@ -9,7 +9,7 @@ import updateIndex from 'HOC/updateIndex';
 
 //公共组件
 import HeaderBanner from 'Common/HeaderBanner';
-import Title from 'Common/Tilte';
+import Title from 'Common/Title';
 
 //组件
 import CelebrityBranding from './CelebrityBranding';

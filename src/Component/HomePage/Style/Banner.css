@@ -1,3 +1,4 @@
+/* 电脑等等设备屏幕 */
 .banner-container {
 	position: relative;
 }
@@ -82,7 +83,7 @@
 }
 
 
-/* 小屏幕 */
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
 	.banner-pagination {
 		display: none;
@@ -90,7 +91,7 @@
 }
 
 
-/* 手机屏幕 */
+/* 手机等设备屏幕 */
 @media (max-width: 768px) {
 	.prev-btn,
 	.next-btn {

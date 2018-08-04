@@ -1,3 +1,4 @@
+/* 电脑等等设备屏幕 */
 .title {
 	overflow: hidden;
 	margin: 60px 0 30px 0;
@@ -23,7 +24,7 @@
 }
 
 
-/* 小屏幕 */
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
 	.title {
 		padding: 0 5%;

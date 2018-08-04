@@ -1,4 +1,5 @@
-.case-banner{
+/* 电脑等等设备屏幕 */
+.case-banner {
 	position: relative;
 	left: 50%;
 	margin-left: -960px;
@@ -8,36 +9,42 @@
 	margin-top: 94px;
 	background: url('../../../Images/index_classic_bg.jpg') no-repeat;
 }
+
 .swiper-container {
 	width: 100%;
 	overflow: visible;
 }
+
 .swiper-container .swiper-pagination {
 	bottom: -50px;
 }
+
 .swiper-slide a {
 	display: block;
 	width: 100%;
 	height: 100%;
 }
+
 .swiper-slide img {
 	width: 100%;
 }
+
 .swiper-pagination-bullet {
 	width: 10px;
 	height: 10px;
 	opacity: 1;
 	background-color: #fff;
 }
+
 .swiper-pagination-bullet-active {
 	opacity: 1;
 	background-color: #77c111;
 }
 
 
-/* 小屏幕 */
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
-	.case-banner{
+	.case-banner {
 		left: 50%;
 		margin-left: -75%;
 		width: 150%;
@@ -46,14 +53,16 @@
 		margin-top: 0;
 		background-size: 200%;
 	}
+
 	.swiper-pagination {
 		display: none;
 	}
 }
 
-/* 小屏幕 */
+
+/* 手机等设备屏幕 */
 @media (max-width: 768px) {
-	.case-banner{
+	.case-banner {
 		left: 50%;
 		margin-left: -100%;
 		width: 200%;

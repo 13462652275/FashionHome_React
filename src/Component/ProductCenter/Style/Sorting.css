@@ -1,35 +1,51 @@
+/* 电脑等等设备屏幕 */
 .product-sorting {
 	margin: 20px auto;
 	background-color: #f6f6f6;
 	border: 1px solid #e5e5e5;
+	overflow: hidden;
 }
+
+.product-sorting b {
+	float: left;
+	padding: 25px 0 25px 20px;
+	color: #333;
+	font-size: 14px;
+	line-height: 13px;
+}
+
 .product-sorting-list {
 	padding: 15px 0;
 	overflow: hidden;
-	white-space: nowrap;
 }
+
 .product-sorting-list li {
-	display: inline-block;
+	float: left;
 	padding: 0 28px;
+	margin: 10px 0;
 	line-height: 13px;
 	border-right: 2px solid #bebebe;
 	color: #333;
 	font-size: 14px;
 	transition: color .3s;
 }
+
 .product-sorting-list li > span {
 	cursor: pointer;
 }
+
 .product-sorting-list li:hover {
 	color: #77c111;
 }
-.product-sorting-list li:first-child {
-	border: none;
-	font-weight: bold;
-}
-.product-sorting-list li:first-child:hover {
-	color: #333;
-}
+
 .product-sorting-list li:last-child {
 	border-right: none;
+}
+
+
+/* iPad等移动设备屏幕 */
+@media (max-width: 1200px) {
+	.product-sorting-list li {
+		border-right: none;
+	}
 }

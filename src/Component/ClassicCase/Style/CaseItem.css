@@ -1,3 +1,4 @@
+/* 电脑等等设备屏幕 */
 .case-floor {
 	margin-top: 40px;
 	overflow: hidden;
@@ -30,17 +31,19 @@
 
 .case-floor-frame > img {
 	width: 100%;
+	transform: scale(1, 1);
+	transition: transform 3s;
 }
 
 .case-floor-frame > img:hover {
-	animation: scale 4s;
+	transform: scale(1.2);
 }
 
 .case-floor-item > p {
 	color: #666;
 	font-size: 14px;
 	text-align: center;
-	line-height: 50px;
+	padding: 15px 0;
 }
 
 .case-floor-item > a {
@@ -61,7 +64,9 @@
 	background-color: #77c111;
 }
 
-@media (max-width: 768px) {
+
+/* 手机等设备屏幕 */
+@media (max-width: 767px) {
 	.case-floor-left {
 		width: 80%;
 		float: none;
@@ -72,19 +77,5 @@
 		width: 80%;
 		float: none;
 		margin: 0 auto;
-	}
-}
-
-@keyframes scale {
-	0% {
-		transform: scale(1);
-	}
-
-	50% {
-		transform: scale(1.2);
-	}
-
-	100% {
-		transform: scale(1);
 	}
 }

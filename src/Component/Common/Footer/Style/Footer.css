@@ -1,3 +1,4 @@
+/* 电脑等等设备屏幕 */
 footer {
 	background-color: #010101;
 }
@@ -44,9 +45,10 @@ footer {
 }
 
 .phone {
-	width: 290px;
+	/*width: 290px;*/
 	height: 31px;
 	margin: 63px auto 35px auto;
+	text-align: center;
 }
 
 .phone-icon {
@@ -96,28 +98,39 @@ footer {
 }
 
 .copyright {
-	width: 260px;
 	margin: 20px auto 0 auto;
 	padding-bottom: 32px;
 	overflow: hidden;
+	text-align: center;
 }
 
 .copyright li {
-	float: left;
-	border-right: 1px solid #b3b3b3;
-	line-height: 12px;
+	display: inline-block;
 }
 
-.copyright li:last-child {
-	border-right: none;
+.copyright li:after {
+	content: "";
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	background-color: #b3b3b3;
+	vertical-align: middle;
+}
+
+.copyright li:last-child:after {
+	background-color: transparent;
 }
 
 .copyright a {
+	display: inline-block;
 	color: #b3b3b3;
+	font-size: 12px;
 	padding: 0 8px;
+	line-height: 12px;
 }
 
-/* 小屏幕 */
+
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
 	.footer-list-wrapper {
 		padding-left: 30%;

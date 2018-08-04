@@ -1,4 +1,4 @@
-/* 大屏幕 */
+/* 电脑等等设备屏幕 */
 .celebrity-life-container {
 	overflow: hidden;
 }
@@ -54,7 +54,7 @@
 }
 
 
-/* 小屏幕 */
+/* iPad等移动设备屏幕 */
 @media (max-width: 1200px) {
 	.celebrity-life-container > div {
 		float: none !important;
@@ -80,7 +80,8 @@
 	}
 }
 
-/* 手机屏幕 */
+
+/* 手机等设备屏幕 */
 @media (max-width: 768px) {
 	.celebrity-life-container > div,
 	.celebrity-life-img-box .celebrity-life-img-view {

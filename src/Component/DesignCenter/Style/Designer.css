@@ -1,4 +1,4 @@
-/* 大屏幕 */
+/* 电脑等等设备屏幕 */
 .designer-list {
 	overflow: hidden;
 	white-space: nowrap;
@@ -57,8 +57,24 @@
 }
 
 
-/* 手机屏幕 */
-@media (max-width: 768px) {
+/* iPad等移动设备屏幕 */
+@media (max-width: 1200px) {
+	.slide-list-ipad {
+		width: 780px;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 1023px) {
+	.slide-list-ipad {
+		width: 360px;
+		margin: 0 auto;
+	}
+}
+
+
+/* 手机等设备屏幕 */
+@media (max-width: 767px) {
 	.designer-item {
 		display: block;
 		width: 70%;
